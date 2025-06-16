@@ -55,7 +55,8 @@
 
       if (distance <= 0) {
         clearInterval(timer);
-        window.location.href = "https://www.instagram.com/plie_maden/";
+        countdownElement.innerText = "공구가 오픈되었습니다!";
+        // 자동 이동 제거됨
       } else {
         const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((distance / (1000 * 60)) % 60);
