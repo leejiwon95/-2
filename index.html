@@ -25,10 +25,10 @@
         clearInterval(timer);
         window.location.href = "https://www.instagram.com/plie_maden/";
       } else {
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownElement.innerHTML = `${hours}시간 ${minutes}분 ${seconds}초`;
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+        countdownElement.innerText = `${hours}시간 ${minutes}분 ${seconds}초`;
       }
     }, 1000);
   </script>
